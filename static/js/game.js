@@ -30,8 +30,20 @@ createStars();
 function moveKid(kid, delta) {
     if (!gameRunning) return;
 
-    kid.x += delta;
-    kid.x = Math.max(0, Math.min(canvas.width - kid.width, kid.x));
+    const prev1 = kid1.x;
+    const prev2 = kid2.x;
+
+    //kid.x += delta;
+    //kid.x = Math.max(0, Math.min(canvas.width - kid.width, kid.x));
+    // Keep inside canvas
+    kid1.x = Math.max(0, Math.min(canvas.width - kid1.width, kid1.x));
+    kid2.x = Math.max(0, Math.min(canvas.width - kid2.width, kid2.x));
+     // Prevent overlap (mobile + desktop)
+    if (areKidsTouching()) {
+        kid1.x = prev1;
+        kid2.x = prev2;
+        handleKidsTouch();
+    }
 }
 document.getElementById("luvLeft").addEventListener("touchstart", () => moveKid(kid1, -25));
 document.getElementById("luvRight").addEventListener("touchstart", () => moveKid(kid1, 25));
@@ -69,6 +81,7 @@ function positionPlayers() {
 function resizeCanvas() {
     canvas.width = Math.min(window.innerWidth * 0.9, 900);
     canvas.height = 500;
+    //canvas.width = Math.min(window.innerWidth * 0.9, 900);
 
     // reposition players
     kid1.y = canvas.height - kid1.height - 10;
@@ -251,6 +264,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (gameRunning) return;
 
         gameRunning = true;
+
+        const mobileControls = document.getElementById("mobileControls");
+        if (mobileControls) {
+            mobileControls.classList.remove("hidden");
+        }
+
+
         timeLeft = 60;
         scoreKid1 = 0;
         scoreKid2 = 0;
@@ -428,3 +448,11 @@ let loaded = 0;
         if (loaded === 2) draw();
     };
 });
+
+//======Mobile Orientation ===========================
+window.addEventListener("orientationchange", () => {
+    setTimeout(() => {
+        resizeCanvas();
+    }, 300);
+});
+

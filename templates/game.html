@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <!--<link rel="stylesheet" href="/static/css/style.css">-->
     <title>🚀 Space Star Catcher</title>
 
     <!-- BASIC STYLES (recommended) -->
@@ -120,6 +120,20 @@
   }
 }
 
+/* Mobile orientation*/
+@media (orientation: landscape) {
+  canvas {
+    height: 70vh;
+  }
+}
+
+@media (orientation: portrait) {
+  canvas {
+    height: 50vh;
+  }
+}
+
+
     </style>
 </head>
 
@@ -135,7 +149,9 @@
     <canvas id="gameCanvas"></canvas>
 
     <!-- Mobile Conttrols -->
-     <div class="mobile-controls">
+<div id="mobileControls" class="mobile-controls hidden">
+
+<div class="mobile-controls">
   <div class="player-controls">
     <p>Luv</p>
     <button id="luvLeft">⬅️</button>
@@ -147,6 +163,8 @@
     <button id="natLeft">⬅️</button>
     <button id="natRight">➡️</button>
   </div>
+</div>
+
 </div>
 
 
