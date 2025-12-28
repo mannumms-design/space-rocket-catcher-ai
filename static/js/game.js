@@ -26,6 +26,20 @@ function createStars() {
 }
 createStars();
 
+//=======Mobile================
+function moveKid(kid, delta) {
+    if (!gameRunning) return;
+
+    kid.x += delta;
+    kid.x = Math.max(0, Math.min(canvas.width - kid.width, kid.x));
+}
+document.getElementById("luvLeft").addEventListener("touchstart", () => moveKid(kid1, -25));
+document.getElementById("luvRight").addEventListener("touchstart", () => moveKid(kid1, 25));
+
+document.getElementById("natLeft").addEventListener("touchstart", () => moveKid(kid2, -25));
+document.getElementById("natRight").addEventListener("touchstart", () => moveKid(kid2, 25));
+
+
 // ================== PLAYERS ==================
 let kid1 = {
     x: 120,

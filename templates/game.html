@@ -95,6 +95,31 @@
             border-radius: 8px;
             border: none;
         }
+
+        /* -----Mobile----- */
+        .mobile-controls {
+  display: none;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.player-controls {
+  text-align: center;
+}
+
+.player-controls button {
+  font-size: 24px;
+  padding: 10px 16px;
+  margin: 5px;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .mobile-controls {
+    display: flex;
+  }
+}
+
     </style>
 </head>
 
@@ -108,6 +133,22 @@
     </div>
     <div id="aiHints" style="color:white; margin-top:10px; font-size:16px;"></div>
     <canvas id="gameCanvas"></canvas>
+
+    <!-- Mobile Conttrols -->
+     <div class="mobile-controls">
+  <div class="player-controls">
+    <p>Luv</p>
+    <button id="luvLeft">⬅️</button>
+    <button id="luvRight">➡️</button>
+  </div>
+
+  <div class="player-controls">
+    <p>Nathan</p>
+    <button id="natLeft">⬅️</button>
+    <button id="natRight">➡️</button>
+  </div>
+</div>
+
 
     <!-- GAME OVER POPUP -->
     <div id="gameOverPopup" class="popup hidden">
