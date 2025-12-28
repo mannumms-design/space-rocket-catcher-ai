@@ -96,3 +96,15 @@ canvas {
         width: 90%;
     }
 }
+
+@media (orientation: landscape) {
+  canvas {
+    height: 70vh;
+  }
+}
+
+@media (orientation: portrait) {
+  canvas {
+    height: 50vh;
+  }
+}

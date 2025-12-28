@@ -33,7 +33,7 @@ function moveKid(kid, delta) {
     const prev1 = kid1.x;
     const prev2 = kid2.x;
 
-    //kid.x += delta;
+    kid.x += delta;
     //kid.x = Math.max(0, Math.min(canvas.width - kid.width, kid.x));
     // Keep inside canvas
     kid1.x = Math.max(0, Math.min(canvas.width - kid1.width, kid1.x));
