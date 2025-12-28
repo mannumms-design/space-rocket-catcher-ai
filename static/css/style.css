@@ -99,7 +99,7 @@ canvas {
 
 @media (orientation: landscape) {
   canvas {
-    height: 65vh;
+    max-height: 60vh;
   }
 }
 
@@ -108,12 +108,14 @@ canvas {
     height: 50vh;
   }
 }
-#mobileControls {
-  position: fixed;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-around;
-  z-index: 1000;
+@media (orientation: landscape) {
+  #mobileControls {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
 }
+
