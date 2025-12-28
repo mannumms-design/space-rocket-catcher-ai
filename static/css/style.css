@@ -1,0 +1,98 @@
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: #000; /* Space theme */
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== CONTROLS ===== */
+.controls {
+    margin-bottom: 12px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background: #1e90ff;
+    color: white;
+}
+
+button:hover {
+    background: #187bcd;
+}
+
+#timer {
+    margin-left: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* ===== CANVAS ===== */
+canvas {
+    display: block;
+    margin: 15px auto;
+    z-index: 0;
+    width: 90vw;
+    max-width: 900px;
+    border: 2px solid #333;
+    border-radius: 12px;
+    background: #000; /* MUST stay black */
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.3);
+}
+
+/* ===== POPUP ===== */
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: #111;
+    color: white;
+    padding: 25px;
+    border-radius: 14px;
+    width: 320px;
+    text-align: center;
+}
+
+.results {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.results img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 8px;
+}
+
+/* ===== UTILITY ===== */
+.hidden {
+    display: none;
+}
+
+/* ===== MOBILE TWEAKS ===== */
+@media (max-width: 600px) {
+    button {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .popup-content {
+        width: 90%;
+    }
+}

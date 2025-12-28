@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>🚀 Space Star Catcher</title>
+
+    <!-- BASIC STYLES (recommended) -->
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .app-footer {
+            margin-top: 60px;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #8e8787 !important;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            margin-bottom: 10px;
+        }
+
+        #startBtn {
+            padding: 10px 18px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #timer {
+            margin-left: 15px;
+            font-size: 18px;
+        }
+
+        canvas {
+            display: block;
+            margin: 15px auto;
+            border: 2px solid #333;
+            border-radius: 12px;
+            background: black;
+        }
+
+        /* POPUP */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: #111;
+            padding: 25px;
+            border-radius: 12px;
+            width: 320px;
+        }
+
+        .results {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+        }
+
+        .results img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            border-radius: 8px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🚀 Space Star Catcher</h1>
+
+    <div class="controls">
+        <button id="startBtn">▶️ Start Game</button>
+        <span id="timer">⏱️ Time: 60</span>
+    </div>
+    <div id="aiHints" style="color:white; margin-top:10px; font-size:16px;"></div>
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- GAME OVER POPUP -->
+    <div id="gameOverPopup" class="popup hidden">
+        <div class="popup-content">
+            <h2>🎉 Game Over!</h2>
+
+            <div class="results">
+                <div>
+                    <img src="/static/images/kid1.png" alt="Luv">
+                    <p>Luv: <span id="finalScore1">0</span></p>
+                </div>
+                <div>
+                    <img src="/static/images/kid2.png" alt="Nathan">
+                    <p>Nathan: <span id="finalScore2">0</span></p>
+                </div>
+            </div>
+
+            <button onclick="location.reload()">🔄 Play Again</button>
+            <button id="closePopupBtn">❌ Close</button>
+        </div>
+    </div>
+
+    <div style="margin-top:20px; text-align:center;">
+    <a style="color:#7671a7" href="/download_stats" target="_blank">
+        📥 Download Game Stats (CSV)
+    </a>
+</div>
+
+
+    <!-- GAME SCRIPT -->
+    <script src="/static/js/game.js"></script>
+
+<footer class="app-footer">
+    © 2025 Space Star Catcher · Built by Manmohan Tomar
+</footer>
+
+</body>
+</html>

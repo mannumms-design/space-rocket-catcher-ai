@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.dev
+venv/
+.env.local
+game_log.csv
+KidsGameNotes.txt
