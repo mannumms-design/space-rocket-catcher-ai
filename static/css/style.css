@@ -106,6 +106,7 @@ canvas {
 @media (orientation: portrait) {
   canvas {
     height: 50vh;
+    width: 40vh;
   }
 }
 @media (orientation: landscape) {

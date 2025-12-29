@@ -149,7 +149,7 @@ function draw() {
         ctx.fillStyle = "white";
         ctx.font = "26px Arial";
         ctx.fillText(
-            "▶️ Press START GAME to Play",
+            "▶️ Lets START GAME",
             canvas.width / 2 - 150,
             canvas.height / 2
         );
