@@ -120,3 +120,8 @@ canvas {
   }
 }
 
+@media screen and (min-width: 768px) {
+  #mobileControls {
+    display: none !important;
+  }
+}
